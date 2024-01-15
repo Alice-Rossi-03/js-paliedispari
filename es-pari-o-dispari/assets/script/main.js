@@ -10,14 +10,20 @@ function randomNumber (minimo, massimo) {
     return Math.floor(Math.random() * (massimo - minimo + 1)) + minimo;
 }
   
+let verification
+
 function evenOrOdd (number){
     if(number % 2 === 0){
-        console.log("The Number Is Even")
+        console.log("The Number Is Even") 
+        verification = true
+        return
     } else {
         console.log("The Number Is Odd")
+        verification = false 
+        return 
     }
 
-}
+} 
 
 // prendiamo il valore che ha scelto l'utente 
 let playerChoice = document.getElementById("chooseEvenOdd")
@@ -26,6 +32,12 @@ let playerNumber = document.getElementById("playerNumber")
 // prendiamo il bottone 
 let getResult = document.getElementById("getResult")
 
+let playerWins = document.getElementById("playerWins")
+let computerWins = document.getElementById("computerWin")
+
+let verificationPlayerChoice 
+
+
 getResult.addEventListener("click", function(){
 
     // numero giocato dal computer 
@@ -33,6 +45,14 @@ getResult.addEventListener("click", function(){
 
     // scelta del player 
     let playerChoiceValue = playerChoice.value 
+
+
+    if (playerChoiceValue = "even"){
+        verificationPlayerChoice = true  
+    } else  if(playerChoiceValue = "odd"){
+        verificationPlayerChoice = false 
+    }
+
 
     // numero del player
     let playerNumberValue = playerNumber.value 
@@ -49,7 +69,11 @@ getResult.addEventListener("click", function(){
 
     evenOrOdd(sumOfAll)
 
-    
+    if (verification = verificationPlayerChoice){
+        playerWins.classList.remove(".d-none")
+    } else {
+        computerWins.classList.remove(".d-none")
+    }
     
 })
 
