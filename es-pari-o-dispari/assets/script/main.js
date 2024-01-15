@@ -33,7 +33,7 @@ let playerNumber = document.getElementById("playerNumber")
 let getResult = document.getElementById("getResult")
 
 let playerWins = document.getElementById("playerWins")
-let computerWins = document.getElementById("computerWin")
+let computerWins = document.getElementById("computerWins")
 
 let verificationPlayerChoice 
 
@@ -47,9 +47,9 @@ getResult.addEventListener("click", function(){
     let playerChoiceValue = playerChoice.value 
 
 
-    if (playerChoiceValue = "even"){
+    if (playerChoiceValue == "even"){
         verificationPlayerChoice = true  
-    } else  if(playerChoiceValue = "odd"){
+    } else  if(playerChoiceValue == "odd"){
         verificationPlayerChoice = false 
     }
 
@@ -69,10 +69,12 @@ getResult.addEventListener("click", function(){
 
     evenOrOdd(sumOfAll)
 
-    if (verification = verificationPlayerChoice){
-        playerWins.classList.remove(".d-none")
+    if (verification == verificationPlayerChoice){
+        playerWins.classList.remove("d-none")
+        console.log("hello world")
     } else {
-        computerWins.classList.remove(".d-none")
+        computerWins.classList.remove("d-none")
+        console.log("hello world")
     }
     
 })
