@@ -9,23 +9,41 @@ let getResult = document.getElementById("getResult")
 let parolaPalindroma = document.getElementById("parolaPalindroma")
 let parolaNonPalindroma = document.getElementById("parolaNonPalindroma")
 
+
+function invertiArray(arrayWord){
+
+    let emptyArray = []
+
+    for(let i = arrayWord.length - 1; i >= 0; i--){
+        emptyArray.push(arrayWord[i])
+    }
+
+    return emptyArray 
+}
+
 getResult.addEventListener("click", function(){
 
     let playerWordValue = playerWord.value 
 
     let arrayWord = Array.from(playerWordValue)
 
-    let emptyArray = []
 
+    emptyArray = invertiArray(arrayWord)
+
+    // controlliamo in console 
     console.log(arrayWord)
+    console.log(emptyArray)
 
-    for(let i = arrayWord.length - 1; i >= 0; i--){
-        emptyArray.push(arrayWord[i])
-        console.log(emptyArray)
+    // controlliamo i contrari in console 
+    console.log(invertiArray(arrayWord))
+    console.log(invertiArray(emptyArray))
+
+
+    if(arrayWord == emptyArray){
+        parolaPalindroma.classList.remove("d-none")
+    } else {
+        parolaNonPalindroma.classList.remove("d-none")
     }
 
-    for(let i = 0; i <= emptyArray.length; i++){
-        console.log(arrayWord)
-        console.log(emptyArray)
-    } 
+
 })
