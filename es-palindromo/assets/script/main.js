@@ -9,7 +9,7 @@ let getResult = document.getElementById("getResult")
 let parolaPalindroma = document.getElementById("parolaPalindroma")
 let parolaNonPalindroma = document.getElementById("parolaNonPalindroma")
 
-
+let palindroma 
 
 
 getResult.addEventListener("click", function(){
@@ -36,15 +36,24 @@ getResult.addEventListener("click", function(){
     console.log(emptyArray)
 
     // controlliamo i contrari in console 
-    console.log(invertiArray(arrayWord))
-    console.log(invertiArray(emptyArray))
+    // console.log(invertiArray(arrayWord))
+    // console.log(invertiArray(emptyArray))
 
 
-    if(JSON.stringify(arrayWord) === JSON.stringify(emptyArray)){
-        parolaPalindroma.classList.remove("d-none")
-    } else {
-        parolaNonPalindroma.classList.remove("d-none")
-    }
+    for(let i = 0; i < arrayWord.length; i++){
+        palindroma += emptyArray[i]
+    } 
+
+    console.log(palindroma)
+
+
+
+    // if( playerWordValue === palindroma){
+    //     parolaPalindroma.classList.remove("d-none")
+    // } else {
+    //     parolaNonPalindroma.classList.remove("d-none")
+    // }
 
 
 })
+
